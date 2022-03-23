@@ -204,6 +204,12 @@ To launch your application's tests, run:
 ./mvnw verify
 ```
 
+### Other tests
+
+Performance tests are run by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling).
+
+To use those tests, you must install Gatling from [https://gatling.io/](https://gatling.io/).
+
 For more information, refer to the [Running tests page][].
 
 ### Code quality
@@ -279,3 +285,4 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [setting up continuous integration]: https://www.jhipster.tech/setting-up-ci/
 [node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/
+[gatling]: https://gatling.io/

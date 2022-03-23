@@ -186,7 +186,7 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/auth/realms/jhipster
+            issuer-uri: 'http://keycloak:8080/realms/jhipster'
         registration:
           oidc:
             client-id: web_app
@@ -244,6 +244,8 @@ jhipster:
       audience:
         - account
         - api://default
+    remember-me:
+      key:
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
@@ -254,3 +256,8 @@ jhipster:
 # ===================================================================
 
 # application:
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

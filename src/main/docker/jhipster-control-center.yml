@@ -31,7 +31,7 @@
 version: '3.8'
 services:
   jhipster-control-center:
-    image: 'jhipster/jhipster-control-center:v0.5.0'
+    image: 'floreez/jhipster-control-center:latest'
     command:
       - /bin/sh
       - -c
@@ -42,7 +42,7 @@ services:
       - SPRING_PROFILES_ACTIVE=prod,api-docs,eureka,oauth2
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
       # For keycloak to work, you need to add '127.0.0.1 keycloak' to your hosts file
-      - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster
+      - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:8080/realms/jhipster
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=jhipster-control-center
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=jhipster-control-center
       - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:admin@host.docker.internal:8761/eureka/
@@ -51,3 +51,7 @@ services:
     # remove the "127.0.0.1:" prefix
     ports:
       - 127.0.0.1:7419:7419
+networks:
+  default:
+    external:
+      name: registry-network

@@ -42,7 +42,7 @@
     "skipClient": true,
     "skipFakeData": false,
     "skipUserManagement": true,
-    "testFrameworks": [],
+    "testFrameworks": ["gatling"],
     "websocket": false,
     "withAdminUi": true
   }
