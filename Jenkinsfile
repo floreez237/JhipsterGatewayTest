@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''chmod +x mvnw;
 ./mvnw clean install -Dlicense.skip=true -DskipTests=true'''
-        echo 'Project Build Build ID ${BUILD_ID}'
+        echo "Project Build Build ID ${BUILD_ID}"
       }
     }
 
@@ -22,14 +22,14 @@ pipeline {
 
         stage('print Tester Credentials') {
           steps {
-            echo 'The tester is ${TESTER}'
+            echo "The tester is ${TESTER}"
             sleep 10
           }
         }
 
         stage('Print Build Number') {
           steps {
-            echo 'This is build number ${BUILD_ID}'
+            echo "This is build number ${BUILD_ID}"
           }
         }
 
