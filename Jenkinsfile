@@ -20,13 +20,6 @@ pipeline {
           }
         }
 
-        stage('print Tester Credentials') {
-          steps {
-            echo "The tester is ${TESTER}"
-            sleep 10
-          }
-        }
-
         stage('Print Build Number') {
           steps {
             echo "This is build number ${BUILD_ID}"
