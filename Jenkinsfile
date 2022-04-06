@@ -13,17 +13,10 @@ pipeline {
       parallel {
         stage('SonarQube Test') {
           steps {
-            sh '''./mvnw sonar:sonar \\
+            sh '''./mvnw test sonar:sonar \\
   -Dsonar.projectKey=jhipster-myAppOauth \\
   -Dsonar.host.url=http://server:9000 \\
   -Dsonar.login=2461104211032049b123c879869de47a29c4dc54'''
-          }
-        }
-
-        stage('print Tester Credentials') {
-          steps {
-            echo "The tester is ${TESTER}"
-            sleep 10
           }
         }
 
