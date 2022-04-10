@@ -23,12 +23,12 @@
         <repository>
             <id>central</id>
             <name>60d0774b23fb-releases</name>
-            <url>http://localhost:8081/artifactory/jhipster-test</url>
+            <url>http://server:8081/artifactory/libs-release-local</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>60d0774b23fb-snapshots</name>
-            <url>http://localhost:8081/artifactory/jhipster-test</url>
+            <url>http://server:8081/artifactory/libs-release-local</url>
         </snapshotRepository>
     </distributionManagement>
 
