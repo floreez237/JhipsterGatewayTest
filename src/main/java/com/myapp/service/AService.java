@@ -38,6 +38,7 @@ public class AService {
      */
     public Mono<ADTO> save(ADTO aDTO) {
         log.debug("Request to save A : {}", aDTO);
+
         return aRepository.save(aMapper.toEntity(aDTO)).map(aMapper::toDto);
     }
 

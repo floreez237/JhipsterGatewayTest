@@ -315,6 +315,12 @@
             <artifactId>feign-reactor-spring-configuration</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <version>3.4.16</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.retry</groupId>
             <artifactId>spring-retry</artifactId>
         </dependency>
@@ -817,9 +823,9 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <!-- <forkCount>3</forkCount>
+                         <forkCount>3</forkCount>
                          <reuseForks>true</reuseForks>
-                         <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
+                         <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                         <!-- Force alphabetical order to have a reproducible build -->
                         <runOrder>alphabetical</runOrder>
                         <excludes>
