@@ -459,7 +459,7 @@
                             <exclude>com/myapp/repository/**</exclude>
                         </excludes>
                     </configuration>
-                    <executions>
+                    <!--<executions>
                         <execution>
                             <goals>
                                 <goal>prepare-agent</goal>
@@ -472,7 +472,7 @@
                                 <goal>report</goal>
                             </goals>
                         </execution>
-                    </executions>
+                    </executions>-->
                 </plugin>
                 <plugin>
                     <groupId>org.pitest</groupId>
