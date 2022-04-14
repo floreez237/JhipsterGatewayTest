@@ -42,7 +42,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <start-class>com.myapp.MyAppOauthApp</start-class>
-        <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
+<!--        <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>-->
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
         <!-- These remain empty unless the corresponding profile is active -->
@@ -95,7 +95,7 @@
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
         <!-- jhipster-needle-maven-property -->
-        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+        <argLine>-Djava.security.egd=file:/dev/./urandom -Xms1024m -Xmx2048m -XX:MaxPermSize=1024m</argLine>
     </properties>
 
     <dependencyManagement>
@@ -826,13 +826,15 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                         <forkCount>3</forkCount>
-                         <reuseForks>true</reuseForks>
+<!--                         <forkCount>3</forkCount>-->
+<!--                         <reuseForks>true</reuseForks>-->
+                        <forkMode>once</forkMode>
                         <!-- Force alphabetical order to have a reproducible build -->
                         <runOrder>alphabetical</runOrder>
                         <excludes>
                             <exclude>**/*IT*</exclude>
                             <exclude>**/*IntTest*</exclude>
+                            <exclude>**/TechnicalStructure**</exclude>
                         </excludes>
                     </configuration>
                 </plugin>
